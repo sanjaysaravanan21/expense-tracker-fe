@@ -1,0 +1,1450 @@
+[
+  {
+    "category": "EB",
+    "amount": 120,
+    "type": "expense",
+    "date": "2023-01-01",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 250,
+    "type": "expense",
+    "date": "2023-01-01",
+    "time": "10:30",
+    "paidTo": "Supermarket"
+  },
+  {
+    "category": "health",
+    "amount": 150,
+    "type": "expense",
+    "date": "2023-01-01",
+    "time": "09:15",
+    "paidTo": "Clinic"
+  },
+  {
+    "category": "internet",
+    "amount": 60,
+    "type": "expense",
+    "date": "2023-01-01",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 75,
+    "type": "expense",
+    "date": "2023-01-01",
+    "time": "08:45",
+    "paidTo": "Gas Station"
+  },
+  {
+    "category": "children",
+    "amount": 200,
+    "type": "expense",
+    "date": "2023-01-01",
+    "time": "16:00",
+    "paidTo": "Daycare"
+  },
+  {
+    "category": "gas",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-01-01",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 45,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "19:00",
+    "paidTo": "Restaurant"
+  },
+  {
+    "category": "entertain",
+    "amount": 100,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "20:30",
+    "paidTo": "Cinema"
+  },
+  {
+    "category": "others",
+    "amount": 30,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "11:00",
+    "paidTo": "Charity"
+  },
+  {
+    "category": "decor",
+    "amount": 250,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "15:00",
+    "paidTo": "Home Store"
+  },
+  {
+    "category": "EB",
+    "amount": 130,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 200,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "10:30",
+    "paidTo": "Grocery Store"
+  },
+  {
+    "category": "health",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "09:15",
+    "paidTo": "Hospital"
+  },
+  {
+    "category": "internet",
+    "amount": 70,
+    "type": "expense",
+    "date": "2023-01-08",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 65,
+    "type": "expense",
+    "date": "2023-01-16",
+    "time": "08:45",
+    "paidTo": "Bus Service"
+  },
+  {
+    "category": "children",
+    "amount": 220,
+    "type": "expense",
+    "date": "2023-01-17",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 95,
+    "type": "expense",
+    "date": "2023-01-18",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 50,
+    "type": "expense",
+    "date": "2023-01-19",
+    "time": "19:00",
+    "paidTo": "Cafe"
+  },
+  {
+    "category": "entertain",
+    "amount": 120,
+    "type": "expense",
+    "date": "2023-01-20",
+    "time": "20:30",
+    "paidTo": "Concert"
+  },
+  {
+    "category": "others",
+    "amount": 35,
+    "type": "expense",
+    "date": "2023-01-21",
+    "time": "11:00",
+    "paidTo": "Bookstore"
+  },
+  {
+    "category": "decor",
+    "amount": 275,
+    "type": "expense",
+    "date": "2023-01-22",
+    "time": "15:00",
+    "paidTo": "Furniture Store"
+  },
+  {
+    "category": "EB",
+    "amount": 140,
+    "type": "expense",
+    "date": "2023-01-23",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 230,
+    "type": "expense",
+    "date": "2023-01-24",
+    "time": "10:30",
+    "paidTo": "Supermarket"
+  },
+  {
+    "category": "health",
+    "amount": 100,
+    "type": "expense",
+    "date": "2023-01-25",
+    "time": "09:15",
+    "paidTo": "Pharmacy"
+  },
+  {
+    "category": "internet",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-01-26",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 85,
+    "type": "expense",
+    "date": "2023-01-27",
+    "time": "08:45",
+    "paidTo": "Taxi"
+  },
+  {
+    "category": "children",
+    "amount": 250,
+    "type": "expense",
+    "date": "2023-01-28",
+    "time": "16:00",
+    "paidTo": "Tuition"
+  },
+  {
+    "category": "gas",
+    "amount": 75,
+    "type": "expense",
+    "date": "2023-01-29",
+    "time": "14:30",
+    "paidTo": "Gas Station"
+  },
+  {
+    "category": "food",
+    "amount": 55,
+    "type": "expense",
+    "date": "2023-01-30",
+    "time": "19:00",
+    "paidTo": "Fast Food"
+  },
+  {
+    "category": "entertain",
+    "amount": 110,
+    "type": "expense",
+    "date": "2023-01-31",
+    "time": "20:30",
+    "paidTo": "Bar"
+  },
+  {
+    "category": "others",
+    "amount": 40,
+    "type": "expense",
+    "date": "2023-02-01",
+    "time": "11:00",
+    "paidTo": "Donation"
+  },
+  {
+    "category": "decor",
+    "amount": 200,
+    "type": "expense",
+    "date": "2023-02-02",
+    "time": "15:00",
+    "paidTo": "Decor Store"
+  },
+  {
+    "category": "EB",
+    "amount": 125,
+    "type": "expense",
+    "date": "2023-02-03",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 260,
+    "type": "expense",
+    "date": "2023-02-04",
+    "time": "10:30",
+    "paidTo": "Market"
+  },
+  {
+    "category": "health",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-02-05",
+    "time": "09:15",
+    "paidTo": "Clinic"
+  },
+  {
+    "category": "internet",
+    "amount": 65,
+    "type": "expense",
+    "date": "2023-02-06",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 70,
+    "type": "expense",
+    "date": "2023-02-07",
+    "time": "08:45",
+    "paidTo": "Uber"
+  },
+  {
+    "category": "children",
+    "amount": 240,
+    "type": "expense",
+    "date": "2023-02-08",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 100,
+    "type": "expense",
+    "date": "2023-02-09",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 60,
+    "type": "expense",
+    "date": "2023-02-10",
+    "time": "19:00",
+    "paidTo": "Cafe"
+  },
+  {
+    "category": "entertain",
+    "amount": 95,
+    "type": "expense",
+    "date": "2023-02-11",
+    "time": "20:30",
+    "paidTo": "Theater"
+  },
+  {
+    "category": "others",
+    "amount": 50,
+    "type": "expense",
+    "date": "2023-02-12",
+    "time": "11:00",
+    "paidTo": "Event"
+  },
+  {
+    "category": "decor",
+    "amount": 300,
+    "type": "expense",
+    "date": "2023-02-13",
+    "time": "15:00",
+    "paidTo": "Home Goods"
+  },
+  {
+    "category": "EB",
+    "amount": 135,
+    "type": "expense",
+    "date": "2023-02-14",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 225,
+    "type": "expense",
+    "date": "2023-02-15",
+    "time": "10:30",
+    "paidTo": "Store"
+  },
+  {
+    "category": "health",
+    "amount": 110,
+    "type": "expense",
+    "date": "2023-02-16",
+    "time": "09:15",
+    "paidTo": "Pharmacy"
+  },
+  {
+    "category": "internet",
+    "amount": 75,
+    "type": "expense",
+    "date": "2023-02-16",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-02-16",
+    "time": "08:45",
+    "paidTo": "Metro"
+  },
+  {
+    "category": "children",
+    "amount": 260,
+    "type": "expense",
+    "date": "2023-02-16",
+    "time": "16:00",
+    "paidTo": "Tutoring"
+  },
+  {
+    "category": "gas",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-02-16",
+    "time": "14:30",
+    "paidTo": "Fuel Supplier"
+  },
+  {
+    "category": "food",
+    "amount": 70,
+    "type": "expense",
+    "date": "2023-02-21",
+    "time": "19:00",
+    "paidTo": "Food Truck"
+  },
+  {
+    "category": "entertain",
+    "amount": 85,
+    "type": "expense",
+    "date": "2023-02-16",
+    "time": "20:30",
+    "paidTo": "Arcade"
+  },
+  {
+    "category": "others",
+    "amount": 45,
+    "type": "expense",
+    "date": "2023-02-23",
+    "time": "11:00",
+    "paidTo": "Crafts"
+  },
+  {
+    "category": "decor",
+    "amount": 220,
+    "type": "expense",
+    "date": "2023-02-24",
+    "time": "15:00",
+    "paidTo": "Home Store"
+  },
+  {
+    "category": "EB",
+    "amount": 110,
+    "type": "expense",
+    "date": "2023-02-25",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 240,
+    "type": "expense",
+    "date": "2023-02-26",
+    "time": "10:30",
+    "paidTo": "Grocery Market"
+  },
+  {
+    "category": "health",
+    "amount": 120,
+    "type": "expense",
+    "date": "2023-02-27",
+    "time": "09:15",
+    "paidTo": "Health Center"
+  },
+  {
+    "category": "internet",
+    "amount": 85,
+    "type": "expense",
+    "date": "2023-02-28",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 95,
+    "type": "expense",
+    "date": "2023-03-01",
+    "time": "08:45",
+    "paidTo": "Public Transport"
+  },
+  {
+    "category": "children",
+    "amount": 270,
+    "type": "expense",
+    "date": "2023-03-02",
+    "time": "16:00",
+    "paidTo": "Child Care"
+  },
+  {
+    "category": "gas",
+    "amount": 70,
+    "type": "expense",
+    "date": "2023-03-03",
+    "time": "14:30",
+    "paidTo": "Gas Supplier"
+  },
+  {
+    "category": "food",
+    "amount": 85,
+    "type": "expense",
+    "date": "2023-03-04",
+    "time": "19:00",
+    "paidTo": "Pizzeria"
+  },
+  {
+    "category": "entertain",
+    "amount": 75,
+    "type": "expense",
+    "date": "2023-03-05",
+    "time": "20:30",
+    "paidTo": "Live Show"
+  },
+  {
+    "category": "others",
+    "amount": 60,
+    "type": "expense",
+    "date": "2023-03-06",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 190,
+    "type": "expense",
+    "date": "2023-03-07",
+    "time": "15:00",
+    "paidTo": "Design Store"
+  },
+  {
+    "category": "EB",
+    "amount": 115,
+    "type": "expense",
+    "date": "2023-03-08",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 255,
+    "type": "expense",
+    "date": "2023-03-09",
+    "time": "10:30",
+    "paidTo": "Farmers Market"
+  },
+  {
+    "category": "health",
+    "amount": 135,
+    "type": "expense",
+    "date": "2023-03-10",
+    "time": "09:15",
+    "paidTo": "Physician"
+  },
+  {
+    "category": "internet",
+    "amount": 95,
+    "type": "expense",
+    "date": "2023-03-11",
+    "time": "12:00",
+    "paidTo": "Cellular Provider"
+  },
+  {
+    "category": "transport",
+    "amount": 60,
+    "type": "expense",
+    "date": "2023-03-12",
+    "time": "08:45",
+    "paidTo": "Train"
+  },
+  {
+    "category": "children",
+    "amount": 290,
+    "type": "expense",
+    "date": "2023-03-13",
+    "time": "16:00",
+    "paidTo": "School Supplies"
+  },
+  {
+    "category": "gas",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-03-14",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 40,
+    "type": "expense",
+    "date": "2023-03-15",
+    "time": "19:00",
+    "paidTo": "Diner"
+  },
+  {
+    "category": "entertain",
+    "amount": 65,
+    "type": "expense",
+    "date": "2023-03-16",
+    "time": "20:30",
+    "paidTo": "Bowling"
+  },
+  {
+    "category": "others",
+    "amount": 75,
+    "type": "expense",
+    "date": "2023-03-17",
+    "time": "11:00",
+    "paidTo": "Subscription"
+  },
+  {
+    "category": "decor",
+    "amount": 310,
+    "type": "expense",
+    "date": "2023-03-18",
+    "time": "15:00",
+    "paidTo": "Home Renovation"
+  },
+  {
+    "category": "EB",
+    "amount": 145,
+    "type": "expense",
+    "date": "2023-03-19",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 270,
+    "type": "expense",
+    "date": "2023-03-20",
+    "time": "10:30",
+    "paidTo": "Grocery Store"
+  },
+  {
+    "category": "health",
+    "amount": 125,
+    "type": "expense",
+    "date": "2023-03-21",
+    "time": "09:15",
+    "paidTo": "Medical Center"
+  },
+  {
+    "category": "internet",
+    "amount": 100,
+    "type": "expense",
+    "date": "2023-03-22",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-03-23",
+    "time": "08:45",
+    "paidTo": "Taxi Service"
+  },
+  {
+    "category": "children",
+    "amount": 310,
+    "type": "expense",
+    "date": "2023-03-24",
+    "time": "16:00",
+    "paidTo": "Child Care"
+  },
+  {
+    "category": "gas",
+    "amount": 95,
+    "type": "expense",
+    "date": "2023-03-25",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 65,
+    "type": "expense",
+    "date": "2023-03-26",
+    "time": "19:00",
+    "paidTo": "Takeout"
+  },
+  {
+    "category": "entertain",
+    "amount": 50,
+    "type": "expense",
+    "date": "2023-03-27",
+    "time": "20:30",
+    "paidTo": "Game Night"
+  },
+  {
+    "category": "others",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-03-28",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 150,
+    "type": "expense",
+    "date": "2023-03-29",
+    "time": "15:00",
+    "paidTo": "Home Store"
+  },
+  {
+    "category": "EB",
+    "amount": 150,
+    "type": "expense",
+    "date": "2023-03-30",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 310,
+    "type": "expense",
+    "date": "2023-03-31",
+    "time": "10:30",
+    "paidTo": "Supermarket"
+  },
+  {
+    "category": "health",
+    "amount": 140,
+    "type": "expense",
+    "date": "2023-04-01",
+    "time": "09:15",
+    "paidTo": "Clinic"
+  },
+  {
+    "category": "internet",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-04-02",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 110,
+    "type": "expense",
+    "date": "2023-04-03",
+    "time": "08:45",
+    "paidTo": "Bus Service"
+  },
+  {
+    "category": "children",
+    "amount": 320,
+    "type": "expense",
+    "date": "2023-04-04",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 85,
+    "type": "expense",
+    "date": "2023-04-05",
+    "time": "14:30",
+    "paidTo": "Gas Supplier"
+  },
+  {
+    "category": "food",
+    "amount": 75,
+    "type": "expense",
+    "date": "2023-04-06",
+    "time": "19:00",
+    "paidTo": "Restaurant"
+  },
+  {
+    "category": "entertain",
+    "amount": 55,
+    "type": "expense",
+    "date": "2023-04-07",
+    "time": "20:30",
+    "paidTo": "Cinema"
+  },
+  {
+    "category": "others",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-04-08",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 250,
+    "type": "expense",
+    "date": "2023-04-09",
+    "time": "15:00",
+    "paidTo": "Home Store"
+  },
+  {
+    "category": "EB",
+    "amount": 160,
+    "type": "expense",
+    "date": "2023-04-10",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 220,
+    "type": "expense",
+    "date": "2023-04-11",
+    "time": "10:30",
+    "paidTo": "Market"
+  },
+  {
+    "category": "health",
+    "amount": 130,
+    "type": "expense",
+    "date": "2023-04-12",
+    "time": "09:15",
+    "paidTo": "Clinic"
+  },
+  {
+    "category": "internet",
+    "amount": 95,
+    "type": "expense",
+    "date": "2023-04-13",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 125,
+    "type": "expense",
+    "date": "2023-04-14",
+    "time": "08:45",
+    "paidTo": "Taxi"
+  },
+  {
+    "category": "children",
+    "amount": 330,
+    "type": "expense",
+    "date": "2023-04-15",
+    "time": "16:00",
+    "paidTo": "Child Care"
+  },
+  {
+    "category": "gas",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-04-16",
+    "time": "14:30",
+    "paidTo": "Gas Station"
+  },
+  {
+    "category": "food",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-04-17",
+    "time": "19:00",
+    "paidTo": "Cafe"
+  },
+  {
+    "category": "entertain",
+    "amount": 45,
+    "type": "expense",
+    "date": "2023-04-18",
+    "time": "20:30",
+    "paidTo": "Bar"
+  },
+  {
+    "category": "others",
+    "amount": 70,
+    "type": "expense",
+    "date": "2023-04-19",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 210,
+    "type": "expense",
+    "date": "2023-04-20",
+    "time": "15:00",
+    "paidTo": "Home Improvement"
+  },
+  {
+    "category": "EB",
+    "amount": 170,
+    "type": "expense",
+    "date": "2023-04-21",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 310,
+    "type": "expense",
+    "date": "2023-04-22",
+    "time": "10:30",
+    "paidTo": "Supermarket"
+  },
+  {
+    "category": "health",
+    "amount": 120,
+    "type": "expense",
+    "date": "2023-04-23",
+    "time": "09:15",
+    "paidTo": "Pharmacy"
+  },
+  {
+    "category": "internet",
+    "amount": 110,
+    "type": "expense",
+    "date": "2023-04-24",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 135,
+    "type": "expense",
+    "date": "2023-04-25",
+    "time": "08:45",
+    "paidTo": "Bus Service"
+  },
+  {
+    "category": "children",
+    "amount": 340,
+    "type": "expense",
+    "date": "2023-04-26",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 95,
+    "type": "expense",
+    "date": "2023-04-27",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 50,
+    "type": "expense",
+    "date": "2023-04-28",
+    "time": "19:00",
+    "paidTo": "Restaurant"
+  },
+  {
+    "category": "entertain",
+    "amount": 50,
+    "type": "expense",
+    "date": "2023-04-29",
+    "time": "20:30",
+    "paidTo": "Show"
+  },
+  {
+    "category": "others",
+    "amount": 100,
+    "type": "expense",
+    "date": "2023-04-30",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 190,
+    "type": "expense",
+    "date": "2023-05-01",
+    "time": "15:00",
+    "paidTo": "Home Store"
+  },
+  {
+    "category": "EB",
+    "amount": 180,
+    "type": "expense",
+    "date": "2023-05-02",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 290,
+    "type": "expense",
+    "date": "2023-05-03",
+    "time": "10:30",
+    "paidTo": "Grocery Store"
+  },
+  {
+    "category": "health",
+    "amount": 150,
+    "type": "expense",
+    "date": "2023-05-04",
+    "time": "09:15",
+    "paidTo": "Medical Center"
+  },
+  {
+    "category": "internet",
+    "amount": 125,
+    "type": "expense",
+    "date": "2023-05-05",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 145,
+    "type": "expense",
+    "date": "2023-05-06",
+    "time": "08:45",
+    "paidTo": "Bus Service"
+  },
+  {
+    "category": "children",
+    "amount": 350,
+    "type": "expense",
+    "date": "2023-05-07",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 100,
+    "type": "expense",
+    "date": "2023-05-08",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 65,
+    "type": "expense",
+    "date": "2023-05-09",
+    "time": "19:00",
+    "paidTo": "Cafe"
+  },
+  {
+    "category": "entertain",
+    "amount": 55,
+    "type": "expense",
+    "date": "2023-05-10",
+    "time": "20:30",
+    "paidTo": "Bar"
+  },
+  {
+    "category": "others",
+    "amount": 60,
+    "type": "expense",
+    "date": "2023-05-11",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 130,
+    "type": "expense",
+    "date": "2023-05-12",
+    "time": "15:00",
+    "paidTo": "Home Improvement"
+  },
+  {
+    "category": "EB",
+    "amount": 190,
+    "type": "expense",
+    "date": "2023-05-13",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 280,
+    "type": "expense",
+    "date": "2023-05-14",
+    "time": "10:30",
+    "paidTo": "Supermarket"
+  },
+  {
+    "category": "health",
+    "amount": 160,
+    "type": "expense",
+    "date": "2023-05-15",
+    "time": "09:15",
+    "paidTo": "Clinic"
+  },
+  {
+    "category": "internet",
+    "amount": 140,
+    "type": "expense",
+    "date": "2023-05-16",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 155,
+    "type": "expense",
+    "date": "2023-05-17",
+    "time": "08:45",
+    "paidTo": "Taxi Service"
+  },
+  {
+    "category": "children",
+    "amount": 360,
+    "type": "expense",
+    "date": "2023-05-18",
+    "time": "16:00",
+    "paidTo": "Child Care"
+  },
+  {
+    "category": "gas",
+    "amount": 110,
+    "type": "expense",
+    "date": "2023-05-19",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 70,
+    "type": "expense",
+    "date": "2023-05-20",
+    "time": "19:00",
+    "paidTo": "Food Truck"
+  },
+  {
+    "category": "entertain",
+    "amount": 45,
+    "type": "expense",
+    "date": "2023-05-21",
+    "time": "20:30",
+    "paidTo": "Game Night"
+  },
+  {
+    "category": "others",
+    "amount": 50,
+    "type": "expense",
+    "date": "2023-05-22",
+    "time": "11:00",
+   "paidTo":  "Support"
+  },
+  {
+    "category": "decor",
+    "amount": 210,
+    "type": "expense",
+    "date": "2023-05-23",
+    "time": "15:00",
+    "paidTo": "Home Store"
+  },
+  {
+    "category": "EB",
+    "amount": 200,
+    "type": "expense",
+    "date": "2023-05-24",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 300,
+    "type": "expense",
+    "date": "2023-05-25",
+    "time": "10:30",
+    "paidTo": "Grocery Store"
+  },
+  {
+    "category": "health",
+    "amount": 170,
+    "type": "expense",
+    "date": "2023-05-26",
+    "time": "09:15",
+    "paidTo": "Medical Center"
+  },
+  {
+    "category": "internet",
+    "amount": 150,
+    "type": "expense",
+    "date": "2023-05-27",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 165,
+    "type": "expense",
+    "date": "2023-05-28",
+    "time": "08:45",
+    "paidTo": "Taxi Service"
+  },
+  {
+    "category": "children",
+    "amount": 370,
+    "type": "expense",
+    "date": "2023-05-29",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 120,
+    "type": "expense",
+    "date": "2023-05-30",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-05-31",
+    "time": "19:00",
+    "paidTo": "Restaurant"
+  },
+  {
+    "category": "entertain",
+    "amount": 60,
+    "type": "expense",
+    "date": "2023-06-01",
+    "time": "20:30",
+    "paidTo": "Cinema"
+  },
+  {
+    "category": "others",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-06-02",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 220,
+    "type": "expense",
+    "date": "2023-06-03",
+    "time": "15:00",
+    "paidTo": "Home Improvement"
+  },
+  {
+    "category": "EB",
+    "amount": 210,
+    "type": "expense",
+    "date": "2023-06-04",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 320,
+    "type": "expense",
+    "date": "2023-06-05",
+    "time": "10:30",
+    "paidTo": "Supermarket"
+  },
+  {
+    "category": "health",
+    "amount": 180,
+    "type": "expense",
+    "date": "2023-06-06",
+    "time": "09:15",
+    "paidTo": "Clinic"
+  },
+  {
+    "category": "internet",
+    "amount": 160,
+    "type": "expense",
+    "date": "2023-06-07",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 175,
+    "type": "expense",
+    "date": "2023-06-08",
+    "time": "08:45",
+    "paidTo": "Taxi Service"
+  },
+  {
+    "category": "children",
+    "amount": 380,
+    "type": "expense",
+    "date": "2023-06-09",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 130,
+    "type": "expense",
+    "date": "2023-06-10",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-06-11",
+    "time": "19:00",
+    "paidTo": "Cafe"
+  },
+  {
+    "category": "entertain",
+    "amount": 55,
+    "type": "expense",
+    "date": "2023-06-12",
+    "time": "20:30",
+    "paidTo": "Bar"
+  },
+  {
+    "category": "others",
+    "amount": 80,
+    "type": "expense",
+    "date": "2023-06-13",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 250,
+    "type": "expense",
+    "date": "2023-06-14",
+    "time": "15:00",
+    "paidTo": "Home Store"
+  },
+  {
+    "category": "EB",
+    "amount": 220,
+    "type": "expense",
+    "date": "2023-06-15",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 300,
+    "type": "expense",
+    "date": "2023-06-16",
+    "time": "10:30",
+    "paidTo": "Market"
+  },
+  {
+    "category": "health",
+    "amount": 190,
+    "type": "expense",
+    "date": "2023-06-17",
+    "time": "09:15",
+    "paidTo": "Clinic"
+  },
+  {
+    "category": "internet",
+    "amount": 170,
+    "type": "expense",
+    "date": "2023-06-18",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 185,
+    "type": "expense",
+    "date": "2023-06-19",
+    "time": "08:45",
+    "paidTo": "Taxi Service"
+  },
+  {
+    "category": "children",
+    "amount": 390,
+    "type": "expense",
+    "date": "2023-06-20",
+    "time": "16:00",
+    "paidTo": "School"
+  },
+  {
+    "category": "gas",
+    "amount": 140,
+    "type": "expense",
+    "date": "2023-06-21",
+    "time": "14:30",
+    "paidTo": "Gas Company"
+  },
+  {
+    "category": "food",
+    "amount": 100,
+    "type": "expense",
+    "date": "2023-06-22",
+    "time": "19:00",
+    "paidTo": "Diner"
+  },
+  {
+    "category": "entertain",
+    "amount": 65,
+    "type": "expense",
+    "date": "2023-06-23",
+    "time": "20:30",
+    "paidTo": "Bowling"
+  },
+  {
+    "category": "others",
+    "amount": 90,
+    "type": "expense",
+    "date": "2023-06-24",
+    "time": "11:00",
+    "paidTo": "Miscellaneous"
+  },
+  {
+    "category": "decor",
+    "amount": 270,
+    "type": "expense",
+    "date": "2023-06-25",
+    "time": "15:00",
+    "paidTo": "Home Improvement"
+  },
+  {
+    "category": "EB",
+    "amount": 230,
+    "type": "expense",
+    "date": "2023-06-26",
+    "time": "08:00",
+    "paidTo": "Electric Company"
+  },
+  {
+    "category": "grocery",
+    "amount": 350,
+    "type": "expense",
+    "date": "2023-06-27",
+    "time": "10:30",
+    "paidTo": "Supermarket"
+  },
+  {
+    "category": "health",
+    "amount": 200,
+    "type": "expense",
+    "date": "2023-06-28",
+    "time": "09:15",
+    "paidTo": "Medical Center"
+  },
+  {
+    "category": "internet",
+    "amount": 180,
+    "type": "expense",
+    "date": "2023-06-29",
+    "time": "12:00",
+    "paidTo": "ISP"
+  },
+  {
+    "category": "transport",
+    "amount": 195,
+    "type": "expense",
+    "date": "2023-06-30",
+    "time": "08:45",
+    "paidTo": "Taxi Service"
+  }
+]

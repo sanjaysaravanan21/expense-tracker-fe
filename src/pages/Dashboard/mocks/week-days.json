@@ -1,0 +1,317 @@
+[
+  {
+    "category": "grocery",
+    "amount": 50,
+    "type": "expense",
+    "date": "2024-09-23",
+    "time": "10:30",
+    "paidTo": "Supermarket",
+    "weekDay": "Monday"
+  },
+  {
+    "category": "transportation",
+    "amount": 20,
+    "type": "expense",
+    "date": "2024-09-23",
+    "time": "08:15",
+    "paidTo": "Bus Service",
+    "weekDay": "Monday"
+  },
+  {
+    "category": "healthcare",
+    "amount": 200,
+    "type": "expense",
+    "date": "2024-09-23",
+    "time": "16:00",
+    "paidTo": "Doctor",
+    "weekDay": "Monday"
+  },
+  {
+    "category": "entertainment",
+    "amount": 150,
+    "type": "expense",
+    "date": "2024-09-23",
+    "time": "19:00",
+    "paidTo": "Cinema",
+    "weekDay": "Monday"
+  },
+  {
+    "category": "others",
+    "amount": 75,
+    "type": "income",
+    "date": "2024-09-23",
+    "time": "12:00",
+    "paidTo": "Freelance Project",
+    "weekDay": "Monday"
+  },
+  {
+    "category": "EB-bill",
+    "amount": 100,
+    "type": "expense",
+    "date": "2024-09-24",
+    "time": "09:00",
+    "paidTo": "Electric Company",
+    "weekDay": "Tuesday"
+  },
+  {
+    "category": "mobile-internet",
+    "amount": 30,
+    "type": "expense",
+    "date": "2024-09-24",
+    "time": "10:00",
+    "paidTo": "Internet Provider",
+    "weekDay": "Tuesday"
+  },
+  {
+    "category": "grocery",
+    "amount": 40,
+    "type": "expense",
+    "date": "2024-09-24",
+    "time": "15:30",
+    "paidTo": "Local Market",
+    "weekDay": "Tuesday"
+  },
+  {
+    "category": "transportation",
+    "amount": 15,
+    "type": "expense",
+    "date": "2024-09-24",
+    "time": "07:00",
+    "paidTo": "Taxi",
+    "weekDay": "Tuesday"
+  },
+  {
+    "category": "entertainment",
+    "amount": 120,
+    "type": "expense",
+    "date": "2024-09-24",
+    "time": "20:00",
+    "paidTo": "Concert",
+    "weekDay": "Tuesday"
+  },
+  {
+    "category": "child-expense",
+    "amount": 60,
+    "type": "expense",
+    "date": "2024-09-25",
+    "time": "11:00",
+    "paidTo": "School",
+    "weekDay": "Wednesday"
+  },
+  {
+    "category": "gas-bill",
+    "amount": 40,
+    "type": "expense",
+    "date": "2024-09-25",
+    "time": "08:00",
+    "paidTo": "Gas Station",
+    "weekDay": "Wednesday"
+  },
+  {
+    "category": "healthcare",
+    "amount": 250,
+    "type": "expense",
+    "date": "2024-09-25",
+    "time": "13:00",
+    "paidTo": "Hospital",
+    "weekDay": "Wednesday"
+  },
+  {
+    "category": "mobile-internet",
+    "amount": 35,
+    "type": "expense",
+    "date": "2024-09-25",
+    "time": "09:30",
+    "paidTo": "Provider",
+    "weekDay": "Wednesday"
+  },
+  {
+    "category": "others",
+    "amount": 90,
+    "type": "income",
+    "date": "2024-09-25",
+    "time": "12:30",
+    "paidTo": "Side Project",
+    "weekDay": "Wednesday"
+  },
+  {
+    "category": "EB-bill",
+    "amount": 110,
+    "type": "expense",
+    "date": "2024-09-26",
+    "time": "10:30",
+    "paidTo": "Electric Company",
+    "weekDay": "Thursday"
+  },
+  {
+    "category": "grocery",
+    "amount": 45,
+    "type": "expense",
+    "date": "2024-09-26",
+    "time": "15:00",
+    "paidTo": "Grocery Store",
+    "weekDay": "Thursday"
+  },
+  {
+    "category": "entertainment",
+    "amount": 100,
+    "type": "expense",
+    "date": "2024-09-26",
+    "time": "19:00",
+    "paidTo": "Theater",
+    "weekDay": "Thursday"
+  },
+  {
+    "category": "transportation",
+    "amount": 25,
+    "type": "expense",
+    "date": "2024-09-26",
+    "time": "09:15",
+    "paidTo": "Train",
+    "weekDay": "Thursday"
+  },
+  {
+    "category": "others",
+    "amount": 80,
+    "type": "income",
+    "date": "2024-09-26",
+    "time": "18:00",
+    "paidTo": "Consulting",
+    "weekDay": "Thursday"
+  },
+  {
+    "category": "healthcare",
+    "amount": 300,
+    "type": "expense",
+    "date": "2024-09-27",
+    "time": "14:00",
+    "paidTo": "Pharmacy",
+    "weekDay": "Friday"
+  },
+  {
+    "category": "gas-bill",
+    "amount": 50,
+    "type": "expense",
+    "date": "2024-09-27",
+    "time": "08:30",
+    "paidTo": "Gas Station",
+    "weekDay": "Friday"
+  },
+  {
+    "category": "mobile-internet",
+    "amount": 35,
+    "type": "expense",
+    "date": "2024-09-27",
+    "time": "09:45",
+    "paidTo": "Internet Provider",
+    "weekDay": "Friday"
+  },
+  {
+    "category": "child-expense",
+    "amount": 100,
+    "type": "expense",
+    "date": "2024-09-27",
+    "time": "11:15",
+    "paidTo": "Childcare",
+    "weekDay": "Friday"
+  },
+  {
+    "category": "grocery",
+    "amount": 70,
+    "type": "expense",
+    "date": "2024-09-27",
+    "time": "16:00",
+    "paidTo": "Local Market",
+    "weekDay": "Friday"
+  },
+  {
+    "category": "entertainment",
+    "amount": 150,
+    "type": "expense",
+    "date": "2024-09-28",
+    "time": "19:30",
+    "paidTo": "Concert",
+    "weekDay": "Saturday"
+  },
+  {
+    "category": "grocery",
+    "amount": 55,
+    "type": "expense",
+    "date": "2024-09-28",
+    "time": "12:00",
+    "paidTo": "Grocery Store",
+    "weekDay": "Saturday"
+  },
+  {
+    "category": "transportation",
+    "amount": 40,
+    "type": "expense",
+    "date": "2024-09-28",
+    "time": "09:30",
+    "paidTo": "Taxi",
+    "weekDay": "Saturday"
+  },
+  {
+    "category": "mobile-internet",
+    "amount": 25,
+    "type": "expense",
+    "date": "2024-09-28",
+    "time": "14:15",
+    "paidTo": "Provider",
+    "weekDay": "Saturday"
+  },
+  {
+    "category": "others",
+    "amount": 100,
+    "type": "income",
+    "date": "2024-09-28",
+    "time": "11:00",
+    "paidTo": "Freelance Project",
+    "weekDay": "Saturday"
+  },
+  {
+    "category": "healthcare",
+    "amount": 250,
+    "type": "expense",
+    "date": "2024-09-29",
+    "time": "10:00",
+    "paidTo": "Clinic",
+    "weekDay": "Sunday"
+  },
+  {
+    "category": "gas-bill",
+    "amount": 60,
+    "type": "expense",
+    "date": "2024-09-29",
+    "time": "09:00",
+    "paidTo": "Gas Station",
+    "weekDay": "Sunday"
+  },
+  {
+    "category": "entertainment",
+    "amount": 120,
+    "type": "expense",
+    "date": "2024-09-29",
+    "time": "15:00",
+    "paidTo": "Amusement Park",
+    "weekDay": "Sunday"
+  },
+  {
+    "category": "child-expense",
+    "amount": 40,
+    "type": "expense",
+    "date": "2024-09-29",
+    "time": "12:30",
+    "paidTo": "School",
+    "weekDay": "Sunday"
+  },
+  {
+    "category": "others",
+    "amount": 90,
+    "type": "income",
+    "date": "2024-09-29",
+    "time": "17:00",
+    "paidTo": "Consulting",
+    "weekDay": "Sunday"
+  }
+]
