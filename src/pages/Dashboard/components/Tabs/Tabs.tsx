@@ -1,6 +1,6 @@
 // src/Tabs.tsx
 
-import React, { useState } from "react";
+import React from "react";
 import Day from "./Day/Day";
 import Week from "./Week/Week";
 import Month from "./Month/Month";
@@ -9,18 +9,8 @@ import { useAppContext } from "../../../../context/AppContext";
 const Tabs: React.FC = () => {
   const { state, dispatch } = useAppContext();
 
-  // ToDo: Removed the Unused Variables
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeType, setType] = useState<"expense" | "income">("expense");
-
   const handleTabClick = (tab: "day" | "week" | "month") => {
     dispatch({ type: "CHANGE_VIEW", payload: tab });
-  };
-
-  // ToDo: Removed the unused variable
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleTypeClick = (type: "expense" | "income") => {
-    setType(type);
   };
 
   return (

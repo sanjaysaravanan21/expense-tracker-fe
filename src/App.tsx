@@ -6,7 +6,6 @@ import Loading from "./components/common/Loading";
 import Layout from "./pages/Layout";
 const Dashboard = lazy(() => import("./pages/Dashboard/Dashboard"));
 const Auth = lazy(() => import("./pages/Auth"));
-const Home = lazy(() => import("./pages/Home/Home"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 const App: React.FC = () => {
