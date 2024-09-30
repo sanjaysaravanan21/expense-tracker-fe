@@ -85,7 +85,11 @@ const ItemList: React.FC = () => {
 
   const handleSwipeUp = () => {
     if (top === 0) {
-      setTop(initialTop);
+      if (state.expenseView === "month") {
+        setTop(480);
+      } else {
+        setTop(initialTop);
+      }
     } else {
       setTop(0);
     }
