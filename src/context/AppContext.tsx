@@ -30,6 +30,7 @@ interface AppState {
   isLoading: boolean;
   isAuthenticated: boolean;
   userDetails: UserDetails | null;
+  expenseView: "day" | "week" | "month";
 }
 
 // Define the initial state
@@ -38,6 +39,7 @@ const initialState: AppState = {
   isLoading: false,
   isAuthenticated: false,
   userDetails: null,
+  expenseView: "day",
 };
 
 // Define actions
@@ -47,6 +49,7 @@ type Action =
   | { type: "SET_USER_DETAILS"; payload: UserDetails }
   | { type: "ADD_ITEM"; payload: Item }
   | { type: "REMOVE_ITEM"; payload: string }
+  | { type: "CHANGE_VIEW"; payload: "day" | "week" | "month" }
   | { type: "LOGOUT_USER" };
 
 // Create the context
@@ -78,6 +81,12 @@ const appReducer = (state: AppState, action: Action): AppState => {
       localState = {
         ...state,
         items: state.items.filter((item) => item.datetime !== action.payload),
+      };
+      break;
+    case "CHANGE_VIEW":
+      localState = {
+        ...state,
+        expenseView: action.payload,
       };
       break;
     case "LOGOUT_USER":

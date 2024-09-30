@@ -2,6 +2,9 @@
 
 import axios from "axios";
 
+const a: number = 123223;
+console.log(a);
+
 // Create an Axios instance
 const api = axios.create({
   baseURL: "http://localhost:4500",

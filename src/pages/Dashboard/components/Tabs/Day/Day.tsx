@@ -11,7 +11,7 @@ const Day: React.FC = () => {
   return (
     <div className="">
       <CustomPieChart data={expensesData} />
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <button>
           <i className="fa-solid fa-angle-left text-white fa-2x"></i>
         </button>

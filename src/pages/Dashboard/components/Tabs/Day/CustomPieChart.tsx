@@ -13,9 +13,10 @@ interface PieChartProps {
 }
 
 const RADIAN = Math.PI / 180;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const renderCustomizedLabel = (props: any) => {
   const { cx, cy, midAngle, value, name } = props;
-  const radius = 120;
+  const radius = 105;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
@@ -49,22 +50,22 @@ const CustomPieChart: React.FC<PieChartProps> = ({ data }) => {
   return (
     <div className="flex flex-col items-center">
       <div
-        style={{ height: 300 }}
+        style={{ height: 250 }}
         className="flex flex-col place-content-center place-items-center absolute text-white font-medium text-xs"
       >
-        <span>Total Amount</span>
+        <span>Total</span>
         <b className="text-lg">₹ 8000</b>
       </div>
-      <ResponsiveContainer height={300}>
-        <PieChart width={300} height={300}>
+      <ResponsiveContainer height={250}>
+        <PieChart width={250} height={250}>
           <Pie
             data={data}
             dataKey="amount"
             nameKey="category"
             cx="50%"
             cy="50%"
-            outerRadius={100}
-            innerRadius={50}
+            outerRadius={80}
+            innerRadius={40}
             fill="#8884d8"
             label={renderCustomizedLabel}
             labelLine={{ strokeWidth: 1, stroke: "white" }}
