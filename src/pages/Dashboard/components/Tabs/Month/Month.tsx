@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getNextPrevMonth, getStartOfMonth } from "../../../../../utils";
+import { getMonthRespnose } from "../../../../../apis";
+import { useAppContext } from "../../../../../context/AppContext";
+import moment from "moment";
 
 // Define the type for the Day object
 type Day = {
   amount: number;
-  day: string; // Assuming this will be a date string in 'YYYY-MM-DD' format
+  date: string; // Assuming this will be a date string in 'YYYY-MM-DD' format
 };
 
 // Define the type for the props of the Calendar component
 interface CalendarProps {
   days: Day[];
+  startIndex?: number;
 }
 
-const Calendar: React.FC<CalendarProps> = ({ days }) => {
+const Calendar: React.FC<CalendarProps> = ({ days, startIndex }) => {
+  const { dispatch } = useAppContext();
   // Calculate the maximum amount to scale the circle sizes
   const maxAmount = Math.max(...days.map((day) => day.amount));
 
@@ -22,37 +28,46 @@ const Calendar: React.FC<CalendarProps> = ({ days }) => {
     return (amount / maxAmount) * (maxSize - minSize) + minSize;
   };
 
+  const navigateToDay = (date: string) => {
+    dispatch({ type: "SET_CURR_DATE", payload: date });
+    dispatch({ type: "CHANGE_VIEW", payload: "day" });
+  };
+
   return (
     <>
-      <div className="grid grid-cols-7 gap-x-6 gap-y-1 p-2 pt-1">
-        {days.map((day) => {
+      <div className="grid grid-cols-7 gap-x-6 gap-y-2 p-2 pt-1">
+        {[...Array(startIndex), ...days].map((day) => {
+          if (!day) {
+            return <div></div>;
+          }
           const circleSize = getCircleSize(day.amount);
           return (
             <div
-              key={day.day}
+              key={day.date}
               className="flex flex-col justify-center items-center"
             >
               {/* Tooltip wrapper */}
               <div className="relative group">
                 {/* Circle for the day */}
-                <div
+                <button
                   className="rounded-full flex items-center justify-center transition-all duration-300 ease-in-out"
                   style={{
                     width: `${circleSize}px`,
                     height: `${circleSize}px`,
                     background: `rgba(255, 255, 255, ${circleSize / 60})`,
                   }}
+                  onClick={() => navigateToDay(day.date)}
                 >
                   <span className="text-xs font-bold" style={{ color: "#666" }}>
-                    {new Date(day.day).getDate()}
+                    {new Date(day.date).getDate()}
                   </span>
-                </div>
+                </button>
 
                 {/* Tooltip on hover */}
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block p-2 bg-gray-800 text-white text-sm rounded-lg shadow-lg z-10">
                   <p>
                     <strong>Date:</strong>{" "}
-                    {new Date(day.day).toLocaleDateString()}
+                    {new Date(day.date).toLocaleDateString()}
                   </p>
                   <p>
                     <strong>Amount:</strong> ₹{day.amount.toLocaleString()}
@@ -63,28 +78,12 @@ const Calendar: React.FC<CalendarProps> = ({ days }) => {
           );
         })}
       </div>
-      <div className="grid grid-cols-7 gap-x-7 gap-y-1 p-2 pt-1">
-        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((val) => (
-          <span className="font-medium" style={{ color: "#666" }} key={val}>
-            {val}
-          </span>
-        ))}
-      </div>
-      <div className="flex justify-between items-center">
-        <button>
-          <i className="fa-solid fa-angle-left text-white fa-2x"></i>
-        </button>
-        <h3 className="text-white font-bold">September 2024</h3>
-        <button>
-          <i className="fa-solid fa-angle-right text-white fa-2x"></i>
-        </button>
-      </div>
     </>
   );
 };
 
 const Month: React.FC = () => {
-  const days = [
+  /* const days = [
     { amount: 8893, day: "2024-10-01" },
     { amount: 13689, day: "2024-10-02" },
     { amount: 3243, day: "2024-10-03" },
@@ -116,8 +115,66 @@ const Month: React.FC = () => {
     { amount: 1936, day: "2024-10-29" },
     { amount: 2824, day: "2024-10-30" },
     { amount: 10612, day: "2024-10-31" },
-  ];
-  return <Calendar days={days} />;
+  ]; */
+  const { dispatch } = useAppContext();
+  const [currStartDate, setCurrStartDate] = useState<string>(getStartOfMonth());
+  const [amount, setAmount] = useState<number>(0);
+  const [days, setDays] = useState<{ amount: number; date: string }[]>([]);
+
+  const handleMonthChange = (type: "next" | "prev") => {
+    /* setCurrStartDate(getStartOfWeekSunday(currStartDate, type)); */
+    setCurrStartDate(getNextPrevMonth(currStartDate, type));
+  };
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        dispatch({ type: "SET_LOADING", payload: true });
+        const { data } = await getMonthRespnose(currStartDate);
+        const { monthData = [], items = [], totalAmount = 0 } = data;
+        setDays(monthData);
+        setAmount(totalAmount);
+        dispatch({ type: "LOAD_GROUP_DAYS", payload: monthData });
+        dispatch({ type: "LOAD_ITEMS", payload: items });
+      } catch (e) {
+        alert("Unable to Load the Data, Please try later");
+      } finally {
+        dispatch({ type: "SET_LOADING", payload: false });
+      }
+    };
+    loadData();
+  }, [currStartDate]);
+
+  return (
+    <>
+      <Calendar days={days} startIndex={new Date(currStartDate).getDay()} />
+      <div className="grid grid-cols-7 gap-x-7 gap-y-1 p-2 pt-1">
+        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((val) => (
+          <span className="font-medium" style={{ color: "#666" }} key={val}>
+            {val}
+          </span>
+        ))}
+      </div>
+      <div className="flex justify-between items-center my-3">
+        <button onClick={() => handleMonthChange("prev")}>
+          <i className="fa-solid fa-angle-left text-white fa-2x"></i>
+        </button>
+        <div className="text-center">
+          <h3 className="text-white font-medium">
+            {moment(currStartDate).format("MMMM YYYY")}
+          </h3>
+          <h3 className="font-bold">₹ {amount.toLocaleString("en-US")}</h3>
+        </div>
+
+        <button
+          onClick={() => handleMonthChange("next")}
+          disabled={currStartDate === getStartOfMonth()}
+        >
+          <i className="fa-solid fa-angle-right text-white fa-2x"></i>
+        </button>
+      </div>
+    </>
+  );
 };
 
 export default Month;

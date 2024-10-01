@@ -7,50 +7,25 @@ import {
   CartesianGrid,
   ResponsiveContainer,
   LabelList,
+  Tooltip,
 } from "recharts";
+import { convertDashedToCapitalized } from "../../../../../utils";
+import { useAppContext } from "../../../../../context/AppContext";
 
-const StackedBarChart: React.FC = () => {
-  const data = [
-    {
-      amount: 130,
-      date: "2024-09-29",
-      weekDay: "Sun",
-    },
-    {
-      amount: 50,
-      date: "2024-09-23",
-      weekDay: "Mon",
-    },
-    {
-      amount: 75,
-      date: "2024-09-24",
-      weekDay: "Tue",
-    },
-    {
-      amount: 100,
-      date: "2024-09-25",
-      weekDay: "Wed",
-    },
-    {
-      amount: 125,
-      date: "2024-09-26",
-      weekDay: "Thu",
-    },
-    {
-      amount: 90,
-      date: "2024-09-27",
-      weekDay: "Fri",
-    },
-    {
-      amount: 520,
-      date: "2024-09-28",
-      weekDay: "Sat",
-    },
-  ];
+const StackedBarChart: React.FC<{
+  data: { date: string; amount: number; weekDay: string }[];
+}> = ({ data = [] }) => {
+  const { dispatch } = useAppContext();
 
+  const handleBarClick = (data: any) => {
+    console.log("Bar clicked:", data);
+    dispatch({ type: "SET_CURR_DATE", payload: data.date });
+    dispatch({ type: "CHANGE_VIEW", payload: "day" });
+    // You can add more logic here, like navigating or displaying more info.
+  };
   return (
     <ResponsiveContainer width="100%" height={250}>
-      <BarChart data={data}>
+      <BarChart margin={{ top: 16 }} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           dataKey="weekDay"
@@ -60,9 +35,21 @@ const StackedBarChart: React.FC = () => {
           }}
         />
         <YAxis hide />
-        <Bar dataKey="amount" stackId="a" fill="#fff">
-          <LabelList dataKey="amount" position="top" fill="#fff" />
+        <Bar dataKey="amount" stackId="a" fill="#fff" onClick={handleBarClick}>
+          <LabelList dataKey="amount" position="top" fill="#666" />
         </Bar>
+        <Tooltip
+          contentStyle={{ color: "#666666" }}
+          itemStyle={{ color: "#666666" }}
+          formatter={(value: string, name: string) => [
+            `₹ ${value}`,
+            convertDashedToCapitalized(name),
+          ]}
+          labelFormatter={(_label: any, payload: any) => {
+            const [{ payload: load = { date: "" } } = {}] = payload;
+            return load.date;
+          }}
+        />
       </BarChart>
     </ResponsiveContainer>
   );

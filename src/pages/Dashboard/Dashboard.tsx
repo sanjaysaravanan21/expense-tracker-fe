@@ -1,6 +1,7 @@
 import { useAppContext } from "../../context/AppContext";
 import Tabs from "./components/Tabs/Tabs";
 import ItemList from "./components/Items/Items";
+import AddExpense from "./components/AddExpense";
 
 const Dashboard: React.FC = () => {
   const { state } = useAppContext();
@@ -17,6 +18,7 @@ const Dashboard: React.FC = () => {
         <Tabs />
       </div>
       <ItemList />
+      <AddExpense />
     </div>
   );
 };

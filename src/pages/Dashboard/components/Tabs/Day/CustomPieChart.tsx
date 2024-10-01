@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { convertDashedToCapitalized } from "../../../../../utils";
-import colors from "../../../mocks/colors.json";
+import mockColors from "../../../mocks/colors.json";
 
 interface Expense {
   category: string;
@@ -9,6 +9,7 @@ interface Expense {
 }
 
 interface PieChartProps {
+  totalAmount?: number;
   data: Expense[];
 }
 
@@ -46,7 +47,7 @@ const renderCustomizedLabel = (props: any) => {
   );
 };
 
-const CustomPieChart: React.FC<PieChartProps> = ({ data }) => {
+const CustomPieChart: React.FC<PieChartProps> = ({ data, totalAmount }) => {
   return (
     <div className="flex flex-col items-center">
       <div
@@ -54,7 +55,9 @@ const CustomPieChart: React.FC<PieChartProps> = ({ data }) => {
         className="flex flex-col place-content-center place-items-center absolute text-white font-medium text-xs"
       >
         <span>Total</span>
-        <b className="text-lg">₹ 8000</b>
+        <b className="text-lg">
+          ₹ {totalAmount ? totalAmount.toLocaleString("en-US") : 0}
+        </b>
       </div>
       <ResponsiveContainer height={250}>
         <PieChart width={250} height={250}>
@@ -69,11 +72,12 @@ const CustomPieChart: React.FC<PieChartProps> = ({ data }) => {
             fill="#8884d8"
             label={renderCustomizedLabel}
             labelLine={{ strokeWidth: 1, stroke: "white" }}
+            animationDuration={250}
           >
             {data.map((_entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={colors[index]}
+                fill={mockColors[index]}
                 strokeWidth={2}
               />
             ))}

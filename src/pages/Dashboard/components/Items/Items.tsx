@@ -1,50 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { convertDashedToCapitalized } from "../../../../utils";
-import expenseData from "../../mocks/expense.json";
 import { useAppContext } from "../../../../context/AppContext";
+import CategoryItem from "../../../../components/common/CategoryItems";
+import items from "../../mocks/expense-types.json";
 
-const items = [
-  { val: "all", icon: "fa-solid fa-layer-group" },
-  { val: "EB", icon: "fa-solid fa-bolt" },
-  { val: "grocery", icon: "fa-solid fa-cart-shopping" },
-  { val: "health", icon: "fa-solid fa-heart-pulse" },
-  { val: "internet", icon: "fa-solid fa-globe" },
-  { val: "transport", icon: "fa-solid fa-bus" },
-  { val: "children", icon: "fa-solid fa-child" },
-  { val: "gas", icon: "fa-solid fa-gas-pump" },
-  { val: "food", icon: "fa-solid fa-utensils" },
-  { val: "entertain", icon: "fa-solid fa-ticket" },
-  { val: "clothing", icon: "fa-solid fa-shirt" },
-  { val: "decor", icon: "fa-solid fa-couch" },
-  { val: "others", icon: "fa-solid fa-ellipsis" },
-];
-
-const Item: React.FC<{
-  icon: string;
-  val: string;
-  isSelected: boolean;
-  handleType: (val: string) => void;
-}> = (props) => {
-  return (
-    <div>
-      <button
-        className={`mx-2 text-black p-2 px-3 min-w-12 ${
-          props.isSelected ? "bg-primary text-white" : "bg-grey text-grey-dark"
-        } rounded-lg`}
-        onClick={() => props.handleType(props.val)}
-      >
-        <i className={`${props.icon} text-xl`}></i>
-      </button>
-      <span
-        className={`text-xs font-medium ${
-          props.isSelected ? "text-primary" : "text-grey-dark"
-        }`}
-      >
-        {convertDashedToCapitalized(props.val)}
-      </span>
-    </div>
-  );
-};
+interface Item {
+  datetime: string; // or Date if you want to handle Date objects
+  category: string;
+  amount: number;
+  paidTo: string;
+  type: "expense" | "income";
+  date: string; // 'YYYY-MM-DD' format
+  time: string; // '24 hr format'
+  createdAt: string; // or Date if you want to handle Date objects
+  updatedAt: string; // or Date if you want to handle Date objects
+}
 
 const ListItem: React.FC<{
   paidTo: string;
@@ -55,20 +25,20 @@ const ListItem: React.FC<{
   const iconClass = items.find(({ val }) => props.category === val);
 
   return (
-    <div className="flex items-center mx-4 my-2">
+    <div className="flex gap-x-2 items-center mx-4 my-2">
       <button
-        className={`mx-2 shrink-0 text-black p-2 px-3 bg-primary-light text-primary rounded-lg min-w-12`}
+        className={`shrink-0 text-black p-2 px-3 bg-primary-light text-primary rounded-lg min-w-12`}
       >
         <i className={`${iconClass?.icon} text-xl`}></i>
       </button>
-      <div className="p-1 grow text-left">
+      <div className="p-1 grow max-w-44 text-left">
         <h3 className="text-black font-medium">{props.paidTo}</h3>
         <p className="text-sm text-grey-dark">
           {convertDashedToCapitalized(props.category)}
         </p>
       </div>
-      <h2 className="font-bold text-xl text-black mx-2">
-        ₹ {props.amount.toFixed(2)}
+      <h2 className="font-bold grow text-xl text-black text-right">
+        ₹ {Math.floor(props.amount)}
       </h2>
     </div>
   );
@@ -83,13 +53,19 @@ const ItemList: React.FC = () => {
 
   const [top, setTop] = useState(initialTop);
 
+  const handleOverlayValue = () => {
+    if (state.expenseView === "month") {
+      setTop(500);
+    } else if (state.expenseView === "week") {
+      setTop(410);
+    } else {
+      setTop(initialTop);
+    }
+  };
+
   const handleSwipeUp = () => {
     if (top === 0) {
-      if (state.expenseView === "month") {
-        setTop(480);
-      } else {
-        setTop(initialTop);
-      }
+      handleOverlayValue();
     } else {
       setTop(0);
     }
@@ -100,11 +76,8 @@ const ItemList: React.FC = () => {
   };
 
   useEffect(() => {
-    if (state.expenseView === "month") {
-      setTop(480);
-    } else {
-      setTop(initialTop);
-    }
+    handleOverlayValue();
+    setType("all");
   }, [state.expenseView]);
 
   return (
@@ -123,9 +96,9 @@ const ItemList: React.FC = () => {
           } text-grey-dark fa-2x`}
         ></i>
       </button>
-      <div className="flex justify-between overflow-x-auto no-scrollbar px-4 py-2">
+      <div className="flex gap-x-2 justify-between overflow-x-auto no-scrollbar px-4 py-2">
         {items.map((item, index) => (
-          <Item
+          <CategoryItem
             {...item}
             key={index}
             handleType={handleType}
@@ -137,11 +110,30 @@ const ItemList: React.FC = () => {
         className="h-full overflow-y-auto no-scrollbar"
         style={{ height: "calc(100% - 120px)" }}
       >
-        {expenseData
-          .filter(({ category }) => type === "all" || category === type)
-          .map((expense, i) => {
-            return <ListItem key={i} {...expense} />;
-          })}
+        {state.groupDays
+          ? state.groupDays.map(({ date }) => {
+              const dayItems = (
+                state.items.filter((item) => item.date === date) || []
+              ).filter(({ category }) => type === "all" || category === type);
+              if (dayItems.length === 0) {
+                return <span key={date}>"No Records Found"</span>;
+              }
+              return (
+                <div key={date}>
+                  <h3 className="text-xs font-medium mx-4 text-left text-grey-dark">
+                    {date}
+                  </h3>
+                  {dayItems.map((expense, i) => {
+                    return <ListItem key={i} {...expense} />;
+                  })}
+                </div>
+              );
+            })
+          : (state.items || [])
+              .filter(({ category }) => type === "all" || category === type)
+              .map((expense, i) => {
+                return <ListItem key={i} {...expense} />;
+              })}
       </div>
     </div>
   );

@@ -2,12 +2,9 @@
 
 import axios from "axios";
 
-const a: number = 123223;
-console.log(a);
-
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "http://localhost:4500",
+  baseURL: import.meta.env.VITE_BE_URL,
 });
 
 // Add a request interceptor
@@ -51,9 +48,10 @@ export const verifyOtp = async (otp: string, phoneNumber: string) => {
 type expense = {
   category: string;
   amount: number;
-  type: "expense" | "income" | string;
+  type?: "expense" | "income" | string;
   date: string;
   time: string;
+  paidTo?: string;
 };
 
 // Function to add an expense
@@ -80,4 +78,28 @@ export const editExpense = async (
   }
 };
 
-export const getAllItems = async () => {};
+export const getDayResponse = async (date: string) => {
+  try {
+    return await api.get(`/items/day/${date}`); // Return the response directly
+  } catch (error) {
+    console.error("Error editing expense:", error);
+    throw error; // Rethrow the error to handle it in the calling function
+  }
+};
+
+export const getWeekResponse = async (startDate: string) => {
+  try {
+    return await api.get(`/items/week/${startDate}`); // Return the response directly
+  } catch (error) {
+    console.error("Error editing expense:", error);
+    throw error; // Rethrow the error to handle it in the calling function
+  }
+};
+
+export const getMonthRespnose = async (startDate: string) => {
+  try {
+    return await api.get(`/items/month/${startDate}`); // Return the response directly
+  } catch (error) {
+    throw error;
+  }
+};

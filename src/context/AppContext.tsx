@@ -1,12 +1,14 @@
 // src/context/AppContext.tsx
 
 import React, { createContext, useContext, useReducer } from "react";
+import { getCurrentDate } from "../utils";
 
 // Define the Item interface
 interface Item {
   datetime: string; // or Date if you want to handle Date objects
   category: string;
   amount: number;
+  paidTo: string;
   type: "expense" | "income";
   date: string; // 'YYYY-MM-DD' format
   time: string; // '24 hr format'
@@ -24,6 +26,11 @@ interface UserDetails {
   token: string;
 }
 
+interface GroupDay {
+  date: string;
+  amount: number;
+}
+
 // Define the AppState interface
 interface AppState {
   items: Item[];
@@ -31,6 +38,8 @@ interface AppState {
   isAuthenticated: boolean;
   userDetails: UserDetails | null;
   expenseView: "day" | "week" | "month";
+  groupDays: GroupDay[] | null;
+  currDate: string;
 }
 
 // Define the initial state
@@ -40,6 +49,8 @@ const initialState: AppState = {
   isAuthenticated: false,
   userDetails: null,
   expenseView: "day",
+  groupDays: null,
+  currDate: getCurrentDate(),
 };
 
 // Define actions
@@ -49,7 +60,10 @@ type Action =
   | { type: "SET_USER_DETAILS"; payload: UserDetails }
   | { type: "ADD_ITEM"; payload: Item }
   | { type: "REMOVE_ITEM"; payload: string }
+  | { type: "SET_CURR_DATE"; payload: string }
   | { type: "CHANGE_VIEW"; payload: "day" | "week" | "month" }
+  | { type: "LOAD_ITEMS"; payload: Item[] }
+  | { type: "LOAD_GROUP_DAYS"; payload: GroupDay[] | null }
   | { type: "LOGOUT_USER" };
 
 // Create the context
@@ -87,6 +101,24 @@ const appReducer = (state: AppState, action: Action): AppState => {
       localState = {
         ...state,
         expenseView: action.payload,
+      };
+      break;
+    case "LOAD_ITEMS":
+      localState = {
+        ...state,
+        items: action.payload,
+      };
+      break;
+    case "LOAD_GROUP_DAYS":
+      localState = {
+        ...state,
+        groupDays: action.payload,
+      };
+      break;
+    case "SET_CURR_DATE":
+      localState = {
+        ...state,
+        currDate: action.payload,
       };
       break;
     case "LOGOUT_USER":

@@ -29,7 +29,7 @@ const Tabs: React.FC = () => {
           </button>
         ))}
       </div> */}
-      <div className="flex justify-between bg-primary text-white rounded bg-primary-dark font-medium">
+      <div className="flex justify-between bg-primary text-white rounded bg-primary-dark font-medium shadow-sm">
         {["day", "week", "month"].map((tab) => (
           <button
             key={tab}
