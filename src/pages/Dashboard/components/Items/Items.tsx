@@ -4,18 +4,6 @@ import { useAppContext } from "../../../../context/AppContext";
 import CategoryItem from "../../../../components/common/CategoryItems";
 import items from "../../mocks/expense-types.json";
 
-interface Item {
-  datetime: string; // or Date if you want to handle Date objects
-  category: string;
-  amount: number;
-  paidTo: string;
-  type: "expense" | "income";
-  date: string; // 'YYYY-MM-DD' format
-  time: string; // '24 hr format'
-  createdAt: string; // or Date if you want to handle Date objects
-  updatedAt: string; // or Date if you want to handle Date objects
-}
-
 const ListItem: React.FC<{
   paidTo: string;
   amount: number;

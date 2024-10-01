@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CustomPieChart from "./CustomPieChart";
 
-import allData from "../../../mocks/expense.json";
 import { getDayResponse } from "../../../../../apis";
 import { getAdjacentDate, getCurrentDate } from "../../../../../utils";
 import { useAppContext } from "../../../../../context/AppContext";
