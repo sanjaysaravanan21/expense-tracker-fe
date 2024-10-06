@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getNextPrevMonth, getStartOfMonth } from "../../../../../utils";
 import { getMonthRespnose } from "../../../../../apis";
 import { useAppContext } from "../../../../../context/AppContext";
@@ -83,6 +83,8 @@ const Calendar: React.FC<CalendarProps> = ({ days, startIndex }) => {
 };
 
 const Month: React.FC = () => {
+  const [mounted, setMounted] = useState<boolean>(false);
+
   /* const days = [
     { amount: 8893, day: "2024-10-01" },
     { amount: 13689, day: "2024-10-02" },
@@ -116,6 +118,8 @@ const Month: React.FC = () => {
     { amount: 2824, day: "2024-10-30" },
     { amount: 10612, day: "2024-10-31" },
   ]; */
+
+  const contentRef = useRef<HTMLSpanElement>(null);
   const { dispatch } = useAppContext();
   const [currStartDate, setCurrStartDate] = useState<string>(getStartOfMonth());
   const [amount, setAmount] = useState<number>(0);
@@ -137,16 +141,30 @@ const Month: React.FC = () => {
         dispatch({ type: "LOAD_GROUP_DAYS", payload: monthData });
         dispatch({ type: "LOAD_ITEMS", payload: items });
       } catch (e) {
+        console.error(e);
         alert("Unable to Load the Data, Please try later");
       } finally {
         dispatch({ type: "SET_LOADING", payload: false });
       }
     };
     loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currStartDate]);
 
+  useEffect(() => {
+    if (mounted) {
+      const offsetHeight = contentRef.current?.offsetHeight || 0;
+      console.log(offsetHeight);
+      dispatch({
+        type: "SET_ITEMS_TOP",
+        payload: offsetHeight + 110,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted]);
+
   return (
-    <>
+    <span ref={contentRef}>
       <Calendar days={days} startIndex={new Date(currStartDate).getDay()} />
       <div className="grid grid-cols-7 gap-x-7 gap-y-1 p-2 pt-1">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((val) => (
@@ -165,15 +183,18 @@ const Month: React.FC = () => {
           </h3>
           <h3 className="font-bold">₹ {amount.toLocaleString("en-US")}</h3>
         </div>
-
-        <button
-          onClick={() => handleMonthChange("next")}
-          disabled={currStartDate === getStartOfMonth()}
-        >
-          <i className="fa-solid fa-angle-right text-white fa-2x"></i>
-        </button>
+        {currStartDate === getStartOfMonth() ? (
+          <span></span>
+        ) : (
+          <button
+            onClick={() => handleMonthChange("next")}
+            disabled={currStartDate === getStartOfMonth()}
+          >
+            <i className="fa-solid fa-angle-right text-white fa-2x"></i>
+          </button>
+        )}
       </div>
-    </>
+    </span>
   );
 };
 

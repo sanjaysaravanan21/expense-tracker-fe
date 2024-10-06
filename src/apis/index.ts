@@ -97,9 +97,5 @@ export const getWeekResponse = async (startDate: string) => {
 };
 
 export const getMonthRespnose = async (startDate: string) => {
-  try {
-    return await api.get(`/items/month/${startDate}`); // Return the response directly
-  } catch (error) {
-    throw error;
-  }
+  return await api.get(`/items/month/${startDate}`); // Return the response directly
 };

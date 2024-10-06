@@ -33,29 +33,35 @@ const ListItem: React.FC<{
 };
 
 const ItemList: React.FC = () => {
-  const { state } = useAppContext();
+  const { state, dispatch } = useAppContext();
 
   const [type, setType] = useState<string>("all");
 
-  const initialTop = 400;
-
-  const [top, setTop] = useState(initialTop);
-
   const handleOverlayValue = () => {
-    if (state.expenseView === "month") {
-      setTop(500);
-    } else if (state.expenseView === "week") {
-      setTop(410);
+    if (state.expenseView === "week") {
+      dispatch({ type: "SET_ITEMS_TOP", payload: 410 });
+    } else if (state.expenseView === "day") {
+      dispatch({ type: "SET_ITEMS_TOP", payload: 400 });
     } else {
-      setTop(initialTop);
+      dispatch({
+        type: "SET_ITEMS_TOP",
+        payload: Number(localStorage.getItem("month_offset_height") || 400),
+      });
     }
   };
 
   const handleSwipeUp = () => {
-    if (top === 0) {
+    if (state.expenseView === "month") {
+      localStorage.setItem(
+        "month_offset_height",
+        JSON.stringify(state.itemsTop)
+      );
+    }
+
+    if (state.itemsTop === 0) {
       handleOverlayValue();
     } else {
-      setTop(0);
+      dispatch({ type: "SET_ITEMS_TOP", payload: 0 });
     }
   };
 
@@ -66,21 +72,22 @@ const ItemList: React.FC = () => {
   useEffect(() => {
     handleOverlayValue();
     setType("all");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.expenseView]);
 
   return (
     <div
       className="absolute left-0 rounded-2xl bg-white text-center h-screen w-full"
       style={{
-        top: top,
-        height: `calc(100vh - ${top}px)`,
+        top: state.itemsTop,
+        height: `calc(100vh - ${state.itemsTop}px)`,
         transition: "all 250ms ease-in-out",
       }}
     >
       <button onClick={handleSwipeUp}>
         <i
           className={`fa-solid fa-angle-${
-            top === 0 ? "down" : "up"
+            state.itemsTop === 0 ? "down" : "up"
           } text-grey-dark fa-2x`}
         ></i>
       </button>
