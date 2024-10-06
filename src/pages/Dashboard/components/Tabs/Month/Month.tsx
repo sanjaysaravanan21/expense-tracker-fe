@@ -130,6 +130,19 @@ const Month: React.FC = () => {
     setCurrStartDate(getNextPrevMonth(currStartDate, type));
   };
 
+  const resizeFunc = () => {
+    const offsetHeight = contentRef.current?.offsetHeight || 0;
+    console.log(offsetHeight);
+    dispatch({
+      type: "SET_ITEMS_TOP",
+      payload: offsetHeight + 110,
+    });
+    localStorage.setItem(
+      "month_offset_height",
+      JSON.stringify(offsetHeight + 110)
+    );
+  };
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -141,6 +154,7 @@ const Month: React.FC = () => {
         dispatch({ type: "LOAD_GROUP_DAYS", payload: monthData });
         dispatch({ type: "LOAD_ITEMS", payload: items });
         setMounted(true);
+        setTimeout(resizeFunc, 100);
       } catch (e) {
         console.error(e);
         alert("Unable to Load the Data, Please try later");
@@ -154,19 +168,10 @@ const Month: React.FC = () => {
 
   useEffect(() => {
     if (mounted) {
-      const offsetHeight = contentRef.current?.offsetHeight || 0;
-      console.log(offsetHeight);
-      dispatch({
-        type: "SET_ITEMS_TOP",
-        payload: offsetHeight + 110,
-      });
-      localStorage.setItem(
-        "month_offset_height",
-        JSON.stringify(offsetHeight + 110)
-      );
+      resizeFunc();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mounted]);
+  }, [mounted, currStartDate]);
 
   return (
     <span ref={contentRef}>
