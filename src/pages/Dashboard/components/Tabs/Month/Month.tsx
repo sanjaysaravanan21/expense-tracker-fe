@@ -140,6 +140,7 @@ const Month: React.FC = () => {
         setAmount(totalAmount);
         dispatch({ type: "LOAD_GROUP_DAYS", payload: monthData });
         dispatch({ type: "LOAD_ITEMS", payload: items });
+        setMounted(true);
       } catch (e) {
         console.error(e);
         alert("Unable to Load the Data, Please try later");
@@ -159,6 +160,10 @@ const Month: React.FC = () => {
         type: "SET_ITEMS_TOP",
         payload: offsetHeight + 110,
       });
+      localStorage.setItem(
+        "month_offset_height",
+        JSON.stringify(offsetHeight + 110)
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted]);

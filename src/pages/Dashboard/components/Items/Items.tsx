@@ -51,13 +51,6 @@ const ItemList: React.FC = () => {
   };
 
   const handleSwipeUp = () => {
-    if (state.expenseView === "month") {
-      localStorage.setItem(
-        "month_offset_height",
-        JSON.stringify(state.itemsTop)
-      );
-    }
-
     if (state.itemsTop === 0) {
       handleOverlayValue();
     } else {
