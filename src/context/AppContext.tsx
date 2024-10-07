@@ -40,6 +40,7 @@ interface AppState {
   expenseView: "day" | "week" | "month";
   groupDays: GroupDay[] | null;
   currDate: string;
+  itemsTop: number;
 }
 
 // Define the initial state
@@ -51,6 +52,7 @@ const initialState: AppState = {
   expenseView: "day",
   groupDays: null,
   currDate: getCurrentDate(),
+  itemsTop: 400,
 };
 
 // Define actions
@@ -64,7 +66,8 @@ type Action =
   | { type: "CHANGE_VIEW"; payload: "day" | "week" | "month" }
   | { type: "LOAD_ITEMS"; payload: Item[] }
   | { type: "LOAD_GROUP_DAYS"; payload: GroupDay[] | null }
-  | { type: "LOGOUT_USER" };
+  | { type: "LOGOUT_USER" }
+  | { type: "SET_ITEMS_TOP"; payload: number };
 
 // Create the context
 const AppContext = createContext<{
@@ -123,6 +126,12 @@ const appReducer = (state: AppState, action: Action): AppState => {
       break;
     case "LOGOUT_USER":
       localState = initialState;
+      break;
+    case "SET_ITEMS_TOP":
+      localState = {
+        ...state,
+        itemsTop: action.payload,
+      };
       break;
     default:
       localState = state;

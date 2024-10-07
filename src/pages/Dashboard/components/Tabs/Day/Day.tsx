@@ -34,6 +34,13 @@ const Day: React.FC = () => {
     });
   };
 
+  useEffect(
+    () => () => {
+      dispatch({ type: "SET_CURR_DATE", payload: getCurrentDate() });
+    },
+    []
+  );
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -41,17 +48,16 @@ const Day: React.FC = () => {
         const { data } = await getDayResponse(state.currDate);
         setData(data);
         dispatch({ type: "LOAD_ITEMS", payload: data.items });
+        dispatch({ type: "LOAD_GROUP_DAYS", payload: null });
       } catch (e) {
+        console.error(e);
         alert("Unable to Load the Data, Please try later");
       } finally {
         dispatch({ type: "SET_LOADING", payload: false });
       }
     };
     loadData();
-
-    return () => {
-      dispatch({ type: "SET_CURR_DATE", payload: getCurrentDate() });
-    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.currDate]);
 
   return (
@@ -62,9 +68,16 @@ const Day: React.FC = () => {
           <i className="fa-solid fa-angle-left text-white fa-2x"></i>
         </button>
         <h3 className="text-white font-bold">{state.currDate}</h3>
-        <button onClick={() => handleDateChange("next")}>
-          <i className="fa-solid fa-angle-right text-white fa-2x"></i>
-        </button>
+        {state.currDate === getCurrentDate() ? (
+          <span></span>
+        ) : (
+          <button
+            onClick={() => handleDateChange("next")}
+            disabled={state.currDate === getCurrentDate()}
+          >
+            <i className="fa-solid fa-angle-right text-white fa-2x"></i>
+          </button>
+        )}
       </div>
     </div>
   );
