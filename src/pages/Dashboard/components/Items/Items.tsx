@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { convertDashedToCapitalized } from "../../../../utils";
 import { useAppContext } from "../../../../context/AppContext";
-import CategoryItem from "../../../../components/common/CategoryItems";
+import CategoryItem from "../../../../components/common/CategoryItem";
 import items from "../../mocks/expense-types.json";
 
 const ListItem: React.FC<{

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useAppContext } from "../../../context/AppContext";
 import { addExpense } from "../../../apis";
 import items from "../mocks/expense-types.json";
-import CategoryItem from "../../../components/common/CategoryItems";
+import CategoryItem from "../../../components/common/CategoryItem";
 
 interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   centered: boolean;
