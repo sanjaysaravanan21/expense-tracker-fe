@@ -1,25 +1,62 @@
 // src/api.ts
 
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 // Create an Axios instance
 const api = axios.create({
   baseURL: import.meta.env.VITE_BE_URL,
+  timeout: 10000,
 });
 
 // Add a request interceptor
 api.interceptors.request.use(
   (config) => {
     // Get the token from local storage
-    const token = localStorage.getItem("token");
-    if (token) {
+    const state = JSON.parse(localStorage.getItem("state") || "{}");
+
+    if (state.userDetails) {
       // If a token exists, set it in the Authorization header
-      config.headers["Authorization"] = `Bearer ${token}`;
+      config.headers["Authorization"] = state.userDetails?.token;
     }
     return config; // Return the modified config
   },
   (error) => {
     // Handle the error case
+    return Promise.reject(error);
+  }
+);
+
+api.interceptors.response.use(
+  (response: AxiosResponse): AxiosResponse => {
+    // Successful response (status code 2xx)
+    return response; // You can modify or return the response directly
+  },
+  (error: AxiosError): Promise<AxiosError> => {
+    if (error.code === AxiosError.ECONNABORTED) {
+      alert(
+        "Using Hobby Servers, Please wait for a minute & then use the Application"
+      );
+    }
+
+    // Handle errors globally (status codes 4xx, 5xx, or network errors)
+    if (error.response) {
+      // Server responded with a status other than 2xx
+      console.error("Error response:", error.response);
+    } else if (error.request) {
+      // Request was made but no response was received
+      console.error("No response received:", error.request);
+    } else {
+      // Something else happened while setting up the request
+      console.error("Error setting up the request:", error.message);
+    }
+
+    // Optionally handle specific error statuses or log errors globally
+    if (error.response && error.response.status === 401) {
+      // Handle unauthorized error (401) - for example, redirect to login
+      console.warn("Unauthorized access - redirecting to login...");
+    }
+
+    // Reject the error to continue with the catch block in the request call
     return Promise.reject(error);
   }
 );

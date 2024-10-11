@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import {
   BarChart,
@@ -17,8 +18,8 @@ const StackedBarChart: React.FC<{
 }> = ({ data = [] }) => {
   const { dispatch } = useAppContext();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleBarClick = (data: any) => {
-    console.log("Bar clicked:", data);
     dispatch({ type: "SET_CURR_DATE", payload: data.date });
     dispatch({ type: "CHANGE_VIEW", payload: "day" });
     // You can add more logic here, like navigating or displaying more info.
