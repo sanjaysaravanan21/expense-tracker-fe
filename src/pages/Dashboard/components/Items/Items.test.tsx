@@ -11,8 +11,3 @@ test("Test Loading Component", async () => {
   // ASSERT
   expect(element).toBeVisible();
 });
-
-it("render the simple snapshot testing", () => {
-  const { container } = render(<ItemList />);
-  expect(container.firstChild).to
-});
