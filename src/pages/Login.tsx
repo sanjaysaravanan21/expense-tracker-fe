@@ -1,10 +1,9 @@
 // src/components/Login.tsx
 
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
-import { verifyOtp } from "../apis";
+import { signIn, verifyOtp } from "../apis";
 
 const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -19,9 +18,7 @@ const Login = () => {
   const handleSendOtp = async () => {
     try {
       dispatch({ type: "SET_LOADING", payload: true });
-      await axios.post("http://localhost:4500/users/sign-in", {
-        phoneNumber,
-      });
+      await signIn(phoneNumber);
       alert("OTP sent to Email");
       setIsOtpSent(true);
     } catch (error) {

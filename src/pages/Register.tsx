@@ -1,7 +1,7 @@
 // src/components/Register.tsx
 
 import { useState } from "react";
-import axios from "axios";
+import { registerUser } from "../apis";
 
 const Register = () => {
   const [fullName, setFullName] = useState("");
@@ -13,11 +13,7 @@ const Register = () => {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4500/users", {
-        fullName,
-        email,
-        phoneNumber,
-      });
+      await registerUser(fullName, email, phoneNumber);
       alert("User registered successfully");
       setRegistrationSuccess(true);
       setError("");

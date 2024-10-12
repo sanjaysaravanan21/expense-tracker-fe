@@ -82,6 +82,19 @@ export const verifyOtp = async (otp: string, phoneNumber: string) => {
   }
 };
 
+export const registerUser = async (
+  fullName: string,
+  email: string,
+  phoneNumber: string
+) => {
+  try {
+    return await api.post("/users", { fullName, email, phoneNumber }); // Return the response data directly
+  } catch (error) {
+    console.error("Error verifying OTP:", error);
+    throw error; // Rethrow the error to handle it in the calling function
+  }
+};
+
 type expense = {
   category: string;
   amount: number;
