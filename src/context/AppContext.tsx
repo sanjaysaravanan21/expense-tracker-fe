@@ -41,6 +41,7 @@ interface AppState {
   groupDays: GroupDay[] | null;
   currDate: string;
   itemsTop: number;
+  appSetup: boolean;
 }
 
 // Define the initial state
@@ -53,6 +54,7 @@ const initialState: AppState = {
   groupDays: null,
   currDate: getCurrentDate(),
   itemsTop: 400,
+  appSetup: false,
 };
 
 // Define actions
@@ -67,7 +69,8 @@ type Action =
   | { type: "LOAD_ITEMS"; payload: Item[] }
   | { type: "LOAD_GROUP_DAYS"; payload: GroupDay[] | null }
   | { type: "LOGOUT_USER" }
-  | { type: "SET_ITEMS_TOP"; payload: number };
+  | { type: "SET_ITEMS_TOP"; payload: number }
+  | { type: "SET_APP_SETUP"; payload: boolean };
 
 // Create the context
 const AppContext = createContext<{
@@ -131,6 +134,12 @@ const appReducer = (state: AppState, action: Action): AppState => {
       localState = {
         ...state,
         itemsTop: action.payload,
+      };
+      break;
+    case "SET_APP_SETUP":
+      localState = {
+        ...state,
+        appSetup: action.payload,
       };
       break;
     default:

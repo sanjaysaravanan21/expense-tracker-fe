@@ -149,3 +149,12 @@ export const getWeekResponse = async (startDate: string) => {
 export const getMonthRespnose = async (startDate: string) => {
   return await api.get(`/items/month/${startDate}`); // Return the response directly
 };
+
+const setupInstance = axios.create({
+  baseURL: import.meta.env.VITE_BE_URL,
+  timeout: 500,
+});
+
+export const appHealth = async () => {
+  return await setupInstance.get(`/server/health`); // Return the response directly
+};
